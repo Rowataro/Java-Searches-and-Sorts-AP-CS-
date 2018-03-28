@@ -1,6 +1,8 @@
 
 # Intent: 
-* Contains code and visualization at **each step** of each algorithm. Helpful for the AP Computer Science A exam.
+* For the AP Computer Science A exam.
+* Works with **INTEGER** arrays.
+* Contains code for each algorithm. Visualizes each step. 
 * In **BlueJ** project format. 
 
 ## Contains Java code for the following: 
