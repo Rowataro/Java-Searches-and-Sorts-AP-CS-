@@ -5,7 +5,7 @@
 * Contains code for each algorithm. Visualizes each step. 
 * In **BlueJ** project format. 
 
-# Contains Java code for the following: 
+## Contains Java code for the following: 
 
 * Searches
   * Binary
@@ -17,5 +17,5 @@
   * Merge
   * Quick
 
-# Usage: 
+## Usage: 
 * To see a certain algorithm run, use the appropriate testing method in the main class.
