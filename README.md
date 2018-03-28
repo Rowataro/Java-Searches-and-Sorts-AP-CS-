@@ -17,6 +17,6 @@
   * Merge
   * Quick
   
-## Helpful Khan Academy course, from which I derived inspiration
+### Helpful Khan Academy course, from which I derived inspiration
 [Link](https://www.khanacademy.org/computing/computer-science/algorithms)
 * **Note: The implementation of the algorithms are in JavaScript, though the learning curve is not too steep if one knows the basics of Java.)**
