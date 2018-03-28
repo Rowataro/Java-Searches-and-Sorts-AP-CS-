@@ -1,14 +1,18 @@
 # Java-Searches-and-Sorts-AP-CS-
-Contains code for the following: 
 
-Searches--
-  Binary
-  Linear
+# Intent: 
+* Contains code and visualization at **each step** of each algorithm. Helpful for the AP Computer Science A test.
 
-Sorts--
-  Selection
-  Insertion
-  Merge
-  Quick
-  
-Breaks down each algorithm through helper functions. Visualizes it by printing each step.
+## Contains Java code (BlueJ projects) for the following: 
+
+* Searches
+  * Binary
+  * Linear
+
+* Sorts
+  * Selection
+  * Insertion
+  * Merge
+  * Quick
+
+**Note: searches and sorts with *INTEGER* arrays**
