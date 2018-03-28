@@ -5,7 +5,7 @@
 * Contains code for each algorithm. Visualizes each step. 
 * In **BlueJ** project format. 
 
-## Contains Java code for the following: 
+# Contains Java code for the following: 
 
 * Searches
   * Binary
