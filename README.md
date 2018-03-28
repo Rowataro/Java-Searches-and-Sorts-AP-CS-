@@ -16,3 +16,7 @@
   * Insertion
   * Merge
   * Quick
+  
+## Helpful Khan Academy course 
+[Link](https://www.khanacademy.org/computing/computer-science/algorithms)
+**Note: The implementation in Javascript, though learning curve is not too steep)**
