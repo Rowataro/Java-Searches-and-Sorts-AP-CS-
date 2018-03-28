@@ -17,4 +17,5 @@
   * Merge
   * Quick
 
-**Note: searches and sorts with *INTEGER* arrays**
+# Usage: 
+* To see a certain algorithm run, use the appropriate testing method in the main class.
