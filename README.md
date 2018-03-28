@@ -3,7 +3,7 @@
 * Helpful guide for tested searches and sorts from the **AP Computer Science A** exam. 
 * Contains code for each algorithm. Visualizes each step. 
 *  Note: **BlueJ** required to run. [Installation link](https://www.bluej.org/)
-*  Note 2: Works only with **INTEGER** arrays.
+*  Note 2: Project only with **INTEGER** arrays.
 
 ## Contains Java code for the following: 
 
