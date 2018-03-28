@@ -1,7 +1,7 @@
-# Java-Searches-and-Sorts-AP-CS-
 
 # Intent: 
-* Contains code and visualization at **each step** of each algorithm. Helpful for the AP Computer Science A test.
+* Contains code and visualization at **each step** of each algorithm. Helpful for the AP Computer Science A test. 
+* In BlueJ project format. 
 
 ## Contains Java code (BlueJ projects) for the following: 
 
