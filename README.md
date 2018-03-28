@@ -1,2 +1,14 @@
 # Java-Searches-and-Sorts-AP-CS-
-Includes code for: binary search and linear search. Also includes: selection sort, insertion sort, merge sort, insertion sort. Visualizes each step of the algorithm.
+Contains code for the following: 
+
+Searches--
+  Binary
+  Linear
+
+Sorts--
+  Selection
+  Insertion
+  Merge
+  Quick
+  
+Breaks down each algorithm through helper functions. Visualizes it by printing each step.
