@@ -5,17 +5,14 @@
 *  Note: **BlueJ** required to run. [Installation link](https://www.bluej.org/)
 *  Note 2: Project only with **INTEGER** arrays. Feel free to work with different integer arrays in the test functions in the Main     class.
 
-## Contains Java code for the following: 
+## Contains Java code for the following (to be added): 
 
 * Searches
   * Binary
-  * Linear
 
 * Sorts
   * Selection
   * Insertion
-  * Merge
-  * Quick
   
 ### Helpful Khan Academy course, from which I derived inspiration
 [Link](https://www.khanacademy.org/computing/computer-science/algorithms)
