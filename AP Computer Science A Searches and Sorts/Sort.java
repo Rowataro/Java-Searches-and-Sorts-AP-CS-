@@ -41,7 +41,6 @@ public class Sort
                         "\n Values to be swapped: " + array[nextIndex] + " and " + array[unsortedIndex] 
                         );
                     }   
-                    
                 swap(unsortedIndex, nextIndex, array);
             }
                     
@@ -53,14 +52,14 @@ public class Sort
                         if(showNextMinimum)
                         {
                             System.out.println("\n This is because " + array[unsortedIndex] +
-                            " is already the next minimum value in the unsorted array." +
+                            " is already the next MINIMUM value in the unsorted array." +
                             "\n And thus no swapping is needed."
                             );
                         }
                     }
                     System.out.println("\nAfter: " + Arrays.toString(array));
         } 
-                    //lazy evaluation, so || cannot be used
+                    //|| operator cannot be used b/c of lazy evaluation
                     if(showNextMinimum)
                     {
                         System.out.println("\nNo need for swapping " + array[array.length -1] +" because everything before it is already sorted.");
@@ -104,7 +103,7 @@ public class Sort
             {
                 System.out.println
                 (
-                "\n Next minimum value ( from unsorted array: " 
+                "\n Next MINIMUM value ( from UNSORTED array: " 
                 + printInRange(startIndex, array.length -1, array) + " ): " + minValue
                 );
             }
@@ -143,11 +142,11 @@ public class Sort
                 {
                     System.out.println("\nInsertion guidelines: ");
 
-                    System.out.println("\n Sorted array: " + printInRange(0, sortedIndex, array) );
+                    System.out.println("\n SORTED array: " + printInRange(0, sortedIndex, array) );
                     
                     System.out.println
                     (
-                    "\n To be inserted (unsorted value outside of sorted array): " + array[unsortedIndex]
+                    "\n To be inserted (UNSORTED value outside of sorted array): " + array[unsortedIndex]
                     );
                 }
             
@@ -179,18 +178,18 @@ public class Sort
                 
                 if(showProcessOfInsertion)
                 {
-                    System.out.println("\nProcess of insertion: ");
-                    System.out.println("\n Ready to insert?");
+                    System.out.println("\nProcess of INSERTION: ");
+                    System.out.println("\n READY to insert?");
            
                     insertionFound = (array[endIndex] <= unsortedValue);
                     System.out.println
                     (
-                    "\n   Next sorted array value (" + array[endIndex] + ") <= unsorted value (" 
+                    "\n   Next sorted array value (" + array[endIndex] + ") <= UNSORTED value (" 
                     + unsortedValue + ")?: " + insertionFound
                     );
                     
                     insertionFound = (endIndex == 0);
-                    System.out.println("\n   Reached end of sorted array?: " + insertionFound );
+                    System.out.println("\n   Reached end of SORTED array?: " + insertionFound );
                 }
         
         for(index = endIndex; index >= 0 && array[index] > unsortedValue; --index)
@@ -199,24 +198,24 @@ public class Sort
             
                 if(showProcessOfInsertion)
                 {
-                    System.out.println("\n Process of moving ");
+                    System.out.println("\n Process of MOVING");
                     System.out.println
                     (
-                    "\n   Sorted array value (" + array[index] + ")" + 
-                    " shifted right to make space for unsorted value " + unsortedValue + ": " + printInRange(0, endIndex + 1, array) 
+                    "\n   SORTED array value (" + array[index] + ")" + 
+                    " shifted right to make space for UNSORTED value " + unsortedValue + ": " + printInRange(0, endIndex + 1, array) 
                     );
                     if(!insertionFound)
                     {
-                        System.out.println("\n Ready to insert?");
+                        System.out.println("\n READY to insert?");
                         if(index > 0)
                         {
                             System.out.println
                             (
-                            "\n   Next sorted array value (" + array[index - 1] + ") <= unsorted value (" 
+                            "\n   Next SORTED array value (" + array[index - 1] + ") <= UNSORTED value (" 
                             + unsortedValue + ")?: " + (array[index - 1] <= unsortedValue)
                             );
                         }
-                        System.out.println("\n   Reached end of sorted array?: " + (index == 0) );
+                        System.out.println("\n   Reached end of SORTED array?: " + (index == 0) );
                     }
                 }
          }
@@ -229,7 +228,7 @@ public class Sort
                     {
                         System.out.println
                         (
-                        "\n Unsorted value " + unsortedValue + 
+                        "\n UNSORTED value " + unsortedValue + 
                         " already in correct place in sorted array, so no inserting or moving needed."
                         );
                     }

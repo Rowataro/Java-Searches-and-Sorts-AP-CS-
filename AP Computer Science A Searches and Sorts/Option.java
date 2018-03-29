@@ -42,6 +42,9 @@ public class Option
             case BINARY_SEARCH:
                 binarySearchOptions = new boolean[TOTAL_BINARY_SEARCH_OPTIONS];
                 return binarySearchOptions;
+            case LINEAR_SEARCH:
+                linearSearchOptions = new boolean[TOTAL_LINEAR_SEARCH_OPTIONS];
+                return linearSearchOptions;
         }
         
         return null;
@@ -71,6 +74,15 @@ public class Option
                     "\n 2. Show step 2 of binary search?\n    (defines how computer decides to narrow down the array for searching)" +
                     "\n 3. Include optional binary searches?\n    (shows binary search working where keys are not in array. prints at bottom of terminal.)"
                 );
+            break;
+            case LINEAR_SEARCH:
+                System.out.println
+                (
+                    "\n 1. Show step 1 of linear search?\n    (defines range of indices where search occurs)" +
+                    "\n 2. Show step 2 of linear search?\n    (defines how computer decides if it needs to keep narrowing the array)" +
+                    "\n 3. Include optional linear searches?\n    (shows linear search working where keys are not in array. prints at bottom of terminal.)"
+                );
+            break;
         }
     }
     private static void setOption(int index, boolean[] options)
@@ -116,6 +128,9 @@ public class Option
             case BINARY_SEARCH:
                 assert binarySearchOptions != null : "Set help settings.";
                 return binarySearchOptions[index];
+            case LINEAR_SEARCH:
+                assert linearSearchOptions != null : "Set help settings.";
+                return linearSearchOptions[index];
         }
         return false;
     }
@@ -132,11 +147,23 @@ public class Option
     public static final int TOTAL_INSERTION_SORT_OPTIONS = 2;
     private static boolean[] insertionSortOptions = null;
     
+    
+    
+    public static final int KEY_NOT_FOUND = 2;
+    
     public static final int SEARCH_RANGE_VALUES = 0;
     public static final int NARROWING_THE_SEARCH = 1;
-    public static final int KEY_NOT_FOUND = 2;
+    
     public static final int TOTAL_BINARY_SEARCH_OPTIONS = 3;
     private static boolean[] binarySearchOptions = null;
+    
+    
+    public static final int SEARCH_RANGE = 0;
+    public static final int CHECKING_EQUALITY = 1;
+    
+    public static final int TOTAL_LINEAR_SEARCH_OPTIONS = 3;
+    private static boolean[] linearSearchOptions = null;
+    
     
     private static Scanner input = new Scanner(System.in);
 }

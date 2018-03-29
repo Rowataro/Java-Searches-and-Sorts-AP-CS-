@@ -9,5 +9,6 @@ public enum Algorithm
 {
    SELECTION_SORT,
    INSERTION_SORT,
-   BINARY_SEARCH
+   BINARY_SEARCH,
+   LINEAR_SEARCH
 }

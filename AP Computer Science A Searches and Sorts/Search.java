@@ -23,7 +23,6 @@ public class Search
   {
       assert isIntArrayInAscendingOrder(array) : "\nArray parameter is not in ASCENDING order";
       
-          System.out.println("\n\n\n\nNew binary search--Array: " + Arrays.toString(array));
           System.out.println("\nKey (value): " + key);
       
       success = false;
@@ -34,26 +33,26 @@ public class Search
       {
           int middle = (lowerBound + upperBound)/2;
              
-              if
-              (
-                lowerBound <= upperBound &&
-                Option.isEnabled(Algorithm.BINARY_SEARCH, Option.SEARCH_RANGE_VALUES)
-              )
-              {
-                  System.out.println("\n\nSearch range: " + printInRange(lowerBound, upperBound, array));
-                  System.out.println
+                  if
                   (
-                  "\n Lower bound index: " + lowerBound + " (value " + array[lowerBound] + ") " +
-                  "\n Upper bound index: " + upperBound + " (value " + array[upperBound] + ") " + 
-                  "\n Middle index: " + middle + " (value " + array[middle] + ") " +
-                  "\n  (Calculated as the rounded down average. Middle value is effectively a guess to find the key.)"
-                 );   
-              }
-              boolean showNarrowingTheSearch = Option.isEnabled(Algorithm.BINARY_SEARCH, Option.NARROWING_THE_SEARCH);
-              if(showNarrowingTheSearch)
-              {
-                  System.out.println("\nNarrowing the search: ");
-              }
+                    lowerBound <= upperBound &&
+                    Option.isEnabled(Algorithm.BINARY_SEARCH, Option.SEARCH_RANGE_VALUES)
+                  )
+                  {
+                      System.out.println("\n\nSearch range: " + printInRange(lowerBound, upperBound, array));
+                      System.out.println
+                      (
+                      "\n Lower bound index: " + lowerBound + " (value " + array[lowerBound] + ") " +
+                      "\n Upper bound index: " + upperBound + " (value " + array[upperBound] + ") " + 
+                      "\n Middle index: " + middle + " (value " + array[middle] + ") " +
+                      "\n  (Index calculated as the ROUNDED DOWN average. Middle value is effectively a GUESS to find the key.)"
+                     );   
+                  }
+                  boolean showNarrowingTheSearch = Option.isEnabled(Algorithm.BINARY_SEARCH, Option.NARROWING_THE_SEARCH);
+                  if(showNarrowingTheSearch)
+                  {
+                      System.out.println("\nNarrowing the search: ");
+                  }
           
           if(array[middle] == key)
           {
@@ -62,7 +61,7 @@ public class Search
                       System.out.println("\n guess (" + array[middle] + ") == key (" + key + ")?: true");
                       System.out.println("\n Binary search can stop.");
                   }
-              System.out.println("\nKey found at index: " + middle);
+                  System.out.println("\nKey found at index: " + middle);
               
               keyIndex = middle;
               success = true; 
@@ -75,8 +74,8 @@ public class Search
                       System.out.println("\n guess (" + array[middle] + ") > key (" + key + ")?: true");
                       System.out.println
                       (
-                      " Binary search narrows by eliminating upper half." +
-                      "\n The previous condition guarantees the key is not in the upper half."
+                      " The condition guarantees the key is not in the UPPER half." +
+                      "\n Therefore the binary search narrows by eliminating the UPPER half."
                       );
                   }
              
@@ -89,8 +88,8 @@ public class Search
                       System.out.println("\n guess (" + array[middle] + ") < key (" + key + ")?: true");
                       System.out.println
                       (
-                      " Binary search narrows by eliminating lower half." + 
-                      "\n The previous condition guarantees the key is not in the lower half."
+                      " The condition guarantees the key is not in the LOWER half." + 
+                      "\n Therefore the binary search narrows by eliminating the LOWER half."
                       );
                   }
        
@@ -98,49 +97,11 @@ public class Search
           }
       }
       
-      if(!success)
-      {
-          System.out.println("\nKey not in array. Binary search narrowed down the whole array.");
-      }
+                  if(!success)
+                  {
+                      System.out.println("\nKey not in array. Binary search narrowed down the whole array.");
+                  }
   } 
-  private static String printInRange(int min, int max, int[] array)
-    {
-      if(min > max)
-      {
-          int temp = max;
-          max = min;
-          min = temp;
-      }
-      else if (min < 0 || max > array.length)
-      {
-          return "";
-      }
-      
-      String stringArray; 
-      
-      stringArray = "[";
-      if(min != 0)
-      {
-          stringArray += "...";
-      }
-      
-      for(int index = min; index <= max; ++index)
-      {
-          stringArray += array[index];
-          if(index != max)
-          {
-              stringArray += ", ";
-          }
-      }
-      
-      if(max != array.length - 1)
-      {
-          stringArray += "...";
-      }
-      stringArray += "]";
-
-      return stringArray;
-  }
   /*
    * precondition:
    *    Array is sorted in ASCENDING order.
@@ -152,15 +113,39 @@ public class Search
       assert isIntArrayInAscendingOrder(array) : "\nArray parameter is not in ASCENDING order";
       success = false;
       
+              System.out.println("\nKey (value): " + key);
       for(int index = 0; index < array.length; ++index)
       {
+              if
+              ( 
+                Option.isEnabled(Algorithm.LINEAR_SEARCH, Option.SEARCH_RANGE) 
+              )
+              {
+                  System.out.println("\nSearch range: " + printInRange(index, array.length -1, array));
+              }
+              if
+              (
+                Option.isEnabled(Algorithm.LINEAR_SEARCH, Option.CHECKING_EQUALITY)
+              )
+              {
+                  System.out.println
+                  ("\n Is first range value (" + array[index] + ") == key (" + key + ")?: " + 
+                   (array[index] == key)
+                  );
+              }
           if(array[index] == key)
           {
+                  System.out.println("\nKey found at index: " + index);
               keyIndex = index;
               success = true;
               break;
           }
       }
+      
+              if(!success)
+              {
+                  System.out.println("\nKey not in array. Linear search narrowed down the whole array.");
+              }
   }
   
   private static boolean isIntArrayInAscendingOrder(int[] array)
@@ -175,6 +160,44 @@ public class Search
       return true;
   }
   
+  private static String printInRange(int min, int max, int[] array)
+  {
+      if (min < 0 || max > array.length)
+      {
+        return "";
+      } 
+      else if(min > max)
+      {
+          int temp = max;
+          max = min;
+          min = temp;
+      }
+        
+      String stringArray; 
+        
+      stringArray = "[";
+      if(min != 0)
+      {
+          stringArray += "...";
+      }
+   
+      for(int index = min; index <= max; ++index)
+      {
+          stringArray += array[index];
+          if(index != max)
+          {
+              stringArray += ", ";
+          }
+      }
+      
+      if(max != array.length - 1)
+      {
+          stringArray += "...";
+      }
+      stringArray += "]";
+        
+      return stringArray;
+  }
   /*
    * Indicate of the LAST search
    */
