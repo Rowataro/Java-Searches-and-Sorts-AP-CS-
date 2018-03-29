@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Sort
+comment0.text=\r\n\ Please\ note\ that\ text\ formatting\ is\ not\ standard.\ \r\n\ To\ help\ get\ to\ the\ meat\ of\ the\ algorithm,\ all\ extra\ text\ to\ explain\ steps\ are\ indented\ away\ from\ the\ actual\ program.\r\n
+comment1.params=array
+comment1.target=int[]\ doSelectionSort(int[])
+comment1.text=\r\n\ precondition\:\ \r\n\ \ Array\ is\ unsorted\ and\ is\ of\ n-length\r\n\ postcondition\:\ \r\n\ \ Array\ sorted\ in\ ASCENDING\ order\r\n
+comment2.params=startIndex\ array
+comment2.target=int\ getMinIndexStartingFrom(int,\ int[])
+comment2.text=\r\n\ Use\ Case\:\r\n\ \ precondition\:\r\n\ \ \ \ \ \ int[]\ array\ \=\ {18,\ 6,\ 66,\ 44,\ 9,\ 22,\ 14};\r\n\ \ \ \ \ \ getMinIndexStartingFrom(2,\ array);\r\n\ \ postcondition\:\ \r\n\ \ \ \ \ \ returns\ 4.\ \r\n\ \ \ \ \ \ The\ minimum\ is\ 9\ starting\ from\ {...66,\ 44,\ 9,\ 22,\ 14}.\ 9\ has\ \r\n\ \ \ \ \ \ index\ 4\ in\ the\ original\ array.\ \r\n
+comment3.params=index1\ index2\ array
+comment3.target=void\ swap(int,\ int,\ int[])
+comment3.text=\r\n\ precondition\:\r\n\ \ \ \ \ index1\ and\ index2\ are\ indices\ of\ array\r\n\ postcondition\:\r\n\ \ \ \ \ element\ at\ index1\ will\ be\ at\ index2\ and\ \r\n\ \ \ \ \ element\ at\ index2\ will\ be\ at\ index1\r\n
+comment4.params=array
+comment4.target=int[]\ doInsertionSort(int[])
+comment4.text=\r\n\ precondition\:\ \r\n\ \ Array\ is\ unsorted\ and\ is\ of\ n-length\r\n\ postcondition\:\ \r\n\ \ Array\ sorted\ in\ ASCENDING\ order\r\n
+comment5.params=unsortedValue\ endIndex\ array
+comment5.target=void\ insertValueEndingAt(int,\ int,\ int[])
+comment5.text=\ precondition\:\r\n\ \ \ \ \ \ array\ from\ 0\ to\ endIndex\ is\ sorted\ in\ ASCENDING\ order\r\n\ Use\ Case\:\r\n\ \ precondition\:\r\n\ \ \ \ \ \ array\ \=\ {3,\ 6,\ 7,\ 4,\ 8,\ 5};\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ unsortedValue\ \=\ 4\ \r\n\ \ \ \ \ \ sorted/endIndex\ \=\ 2\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ insertValueEndingAt(4,\ 2,\ array);\r\n\ \ postcondition\:\ \r\n\ \ \ \ \ \ array\ \=\ {3,\ 4,\ 6,\ 7,\ 8,\ 5};\r\n
+comment6.params=min\ max\ array
+comment6.target=java.lang.String\ printInRange(int,\ int,\ int[])
+numComments=7
