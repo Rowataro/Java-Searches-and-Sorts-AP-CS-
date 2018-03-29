@@ -1,12 +1,5 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: AP Computer Science A Searches and Sorts
+PURPOSE OF PROJECT: Visual guide for steps of certain searches and sorts
+VERSION or DATE: 3/29/18
+USER INSTRUCTIONS: Go to Main class and run a test method
