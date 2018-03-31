@@ -9,6 +9,7 @@
 
 * Searches
   * Binary
+  * Linear
 
 * Sorts
   * Selection
