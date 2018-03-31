@@ -5,7 +5,7 @@
 *  Note: **BlueJ** required to run. [Installation link](https://www.bluej.org/)
 *  Note 2: Project only with **INTEGER** arrays. Feel free to work with different integer arrays in the test functions in the Main     class.
 
-## Contains Java code for the following (to be added): 
+## Contains Java code for the following (more to be added): 
 
 * Searches
   * Binary
