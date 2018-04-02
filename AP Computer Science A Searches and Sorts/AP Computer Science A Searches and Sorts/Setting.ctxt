@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Setting
+comment0.text=\r\n\ About\:\ If\ one\ needs\ extra\ details\ about\ steps\ of\ each\ algorithm,\ use\ this\ class.\r\n
+comment1.params=algorithm
+comment1.target=void\ setAll(Algorithm)
+comment1.text=\r\n\ Use\ Case\:\r\n\ \ Settings\ need\ to\ be\ set\ before\ running\ algorithms.\r\n\ precondition\:\ \r\n\ \ Valid\ algorithm\ from\ enum\ Algorithm\r\n\ postcondition\:\r\n\ \ Sets\ optional\ text\ settings\ (extra\ info)\ for\ each\ algorithm.\r\n
+comment2.params=algorithm
+comment2.target=boolean[]\ getOptionArray(Algorithm)
+comment3.params=algorithm
+comment3.target=void\ displayOptions(Algorithm)
+comment4.params=index\ options
+comment4.target=void\ setOption(int,\ boolean[])
+comment5.params=algorithm\ index
+comment5.target=boolean\ isEnabled(Algorithm,\ int)
+numComments=6

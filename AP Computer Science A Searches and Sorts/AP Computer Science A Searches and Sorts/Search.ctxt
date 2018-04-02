@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Search
+comment0.text=\r\n\ Please\ note\ that\ text\ formatting\ is\ not\ standard.\ \r\n\ To\ help\ get\ to\ the\ meat\ of\ the\ algorithm,\ all\ extra\ text\ to\ explain\ steps\ are\ indented\ away\ from\ the\ actual\ program.\r\n
+comment1.params=array\ key
+comment1.target=void\ doBinarySearch(int[],\ int)
+comment1.text=\r\n\ precondition\:\r\n\ \ \ \ Array\ is\ sorted\ in\ ASCENDING\ order.\r\n\ postcondition\:\ \r\n\ \ \ \ Success\ flag\ and\ keyIndex\ set\ appropriately.\r\n
+comment2.params=array\ key
+comment2.target=void\ doLinearSearch(int[],\ int)
+comment2.text=\r\n\ precondition\:\r\n\ \ \ \ Array\ is\ sorted\ in\ ASCENDING\ order.\r\n\ postcondition\:\ \r\n\ \ \ \ Success\ flag\ and\ keyIndex\ set\ appropriately.\r\n
+comment3.params=array
+comment3.target=boolean\ isIntArrayInAscendingOrder(int[])
+comment4.params=min\ max\ array
+comment4.target=java.lang.String\ printInRange(int,\ int,\ int[])
+comment5.params=
+comment5.target=int\ getIndexOfLastKey()
+comment5.text=\r\n\ Indicate\ of\ the\ LAST\ search\r\n
+comment6.params=
+comment6.target=boolean\ wasSuccessful()
+comment6.text=\r\n\ Indicative\ of\ the\ LAST\ search\r\n
+numComments=7

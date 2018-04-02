@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ShowAlgorithm
+comment0.text=\ About\:\ Here\ is\ where\ the\ searches\ and\ sorts\ are\ called,\ and\ the\ integer\ arrays\ are.\r\n\ Feel\ free\ to\ change\ integer\ arrays\ to\ test\ a\ certain\ algorithm.\r\n
+comment1.params=algorithm
+comment1.target=void\ runSearch(Algorithm)
+comment1.text=\r\n\ precondition\:\r\n\ \ Search\ algorithm\ is\ used\ from\ enum\ Algorithm\r\n\ postcondition\:\r\n\ \ Shows\ steps\ of\ search\ for\ values\ in\ searchArray.\r\n
+comment2.params=algorithm\ key
+comment2.target=void\ executeSearchWithKey(Algorithm,\ int)
+comment3.params=option
+comment3.target=boolean\ askForFlag(UserOption)
+comment4.params=algorithm
+comment4.target=void\ runSort(Algorithm)
+comment4.text=\r\n\ precondition\:\r\n\ \ Sort\ algorithm\ is\ used\ from\ enum\ Algorithm\r\n\ postcondition\:\r\n\ \ Shows\ steps\ of\ sort\ for\ sorting\ unsortedSortArray\r\n
+comment5.params=algorithm
+comment5.target=int[]\ executeSort(Algorithm)
+numComments=6
