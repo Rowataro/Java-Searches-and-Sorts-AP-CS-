@@ -7,7 +7,6 @@
  */
 
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -107,28 +106,14 @@ public class Sort
                 System.out.println
                 (
                     "\n Next MINIMUM value ( from UNSORTED array: " 
-                    + printInRange(startIndex, array.length -1, array) + " ): " + minValue
+                    + arrayInRange(startIndex, array.length -1, array) + " ): " + minValue
                 );
                 TimeUnit.MILLISECONDS.sleep(1998);
             }
 
         return minIndex;
     }
-
-    /*
-     * precondition:
-     *     index1 and index2 are indices of array
-     * postcondition:
-     *     element at index1 will be at index2 and 
-     *     element at index2 will be at index1
-     */
-    private static void swap(int index1, int index2, int[] array)
-    {
-        int temp = array[index2];
-        array[index2] = array[index1];
-        array[index1] = temp;
-    }
-
+    
     /*
      * precondition: 
      *  Array is unsorted and is of n-length
@@ -147,7 +132,7 @@ public class Sort
                 {
                     System.out.println("\nInsertion guidelines: ");
     
-                    System.out.println("\n SORTED array: " + printInRange(0, sortedIndex, array) );
+                    System.out.println("\n SORTED array: " + arrayInRange(0, sortedIndex, array) );
     
                     System.out.println
                     (
@@ -191,7 +176,7 @@ public class Sort
                         System.out.print
                         (
                             "\n SORTED array value " + array[index] + 
-                            " shifted RIGHT: " + printInRange(0, endIndex + 1, array) 
+                            " shifted RIGHT: " + arrayInRange(0, endIndex + 1, array) 
                         );
                         if(index == 0 || array[index - 1] <= unsortedValue)
                         {
@@ -259,13 +244,13 @@ public class Sort
                 {
                         System.out.println 
                         (
-                            "\n Correct insertion in sorted array: "+ printInRange(0, endIndex + 1, array)
+                            "\n Correct insertion in sorted array: "+ arrayInRange(0, endIndex + 1, array)
                         );
                         TimeUnit.MILLISECONDS.sleep(1332);
                 }
     }
-
-    private static String printInRange(int min, int max, int[] array)
+    
+    private static String arrayInRange(int min, int max, int[] array)
     {
         if(min > max)
         {
@@ -303,129 +288,424 @@ public class Sort
 
         return stringArray;
     }
+    
+    public static int[] doMergeSort(int[] array) throws InterruptedException
+    {
+        int lowestIndex = 0;
+        int highestIndex = array.length -1;
+            if(Setting.isEnabled(Algorithm.MERGE_SORT, Setting.SHOW_RECURSIVE_CALLS))
+            {
+                System.out.println
+                ("\n\nFunction signature -- " +
+                "void mergeSortFromTo(int lowestIndex, int highestIndex...)"
+                );
+                TimeUnit.MILLISECONDS.sleep(1998);
+                System.out.println
+                (
+                    "\n\nInitial call: " + 
+                    "mergeSortFromTo(" + lowestIndex + ", " + highestIndex + ")" + 
+                    "\nArray: " + Arrays.toString(array)
+                );
+                TimeUnit.MILLISECONDS.sleep(1998);
+                
+                if(lowestIndex != highestIndex)
+                {
+                    System.out.println
+                    (
+                    "\nORDER of calls " +
+                    "\n  (Recursive calls to follow)" +
+                    "\nExpect mergeSortToFrom() to: " +
+                    "\n 1. DIVIDE (in half)" +
+                    "\n 2. CONQUER" +
+                    "\n 3. COMBINE until the method returns the initial call."
+                    );
+                    TimeUnit.MILLISECONDS.sleep(2500);
+                }
+            }
+        mergeSortFromTo(lowestIndex, highestIndex, array);
+        return array;
+    }
     /*
-    public static void doMergeSort(ArrayList<LibraryBook> library)
-    {
-    if(library == null)
-    {
-    System.out.println("\nLibrary is null.");
-    return;
-    }
-    else if (library.isEmpty())
-    {
-    System.out.println("\nLibrary is empty.");
-    return;
-    }
-
-    int left = 0;
-    int right = library.size() - 1;
-    mergeSortHelper(library, left, right);
-    }
-    private static void mergeSortHelper(ArrayList<LibraryBook> library, int left, int right)
-    {
-    if (left < right)
-    {
-    int middle = (left + right)/2;
-
-    mergeSortHelper(library, left, middle);
-    mergeSortHelper(library , middle+1, right);
-
-    // Merge the sorted halves
-    merge(library, left, middle, right);
-    }
-    }
-    private static void merge(ArrayList<LibraryBook> library, int left, int middle, int right)
-    {
-    int n1 = middle - left + 1;
-    int n2 = right - middle;
-
-    ArrayList<LibraryBook> L = new ArrayList();
-    ArrayList<LibraryBook> R = new ArrayList();
-
-    for (int i=0; i<n1; ++i)
-    {
-    L.add( new LibraryBook( library.get(left + i).getBook(), library.get(left + i).getCopies() ) );
-    }
-    for (int j=0; j<n2; ++j)
-    {
-    R.add( new LibraryBook( library.get(middle + 1 + j).getBook(), library.get(middle + 1 + j).getCopies() ));
-    }
-
-    int i = 0, j = 0;
-
-    int k = left;
-    while (i < n1 && j < n2)
-    {
-    if (L.get(i).getNumPages() <= R.get(j).getNumPages())
-    {
-
-    library.set(k, L.get(i));
-    i++;
-    }
-    else
-    {
-    library.set(k, R.get(j));
-    j++;
-    }
-    k++;
-    }
-
-    while (i < n1)
-    {
-    library.set(k, L.get(i));
-    i++;
-    k++;
-    }
-
-    while (j < n2)
-    {
-    library.set(k, R.get(j));
-    j++;
-    k++;
-    }
-    }
-
-    public static int[] doQuickSort(int array[])
-    {
-    assert array!= null : "Array is null";
-    assert array.length >= 0 : "Array is empty";
-    int low = 0;
-    int high = array.length - 1;
-    int[] sorted = quickSortHelper(array, low, high);
-    return sorted;
-    }
-    private static int[] quickSortHelper(int[] array, int low, int high)
-    {
-    if (low < high)
-    {
-    int pi = partition(array, low, high);
-    quickSortHelper(array, low, pi-1);
-    quickSortHelper(array, pi+1, high);
-    }
-    return array;
-    }
-    private static int partition(int arr[], int low, int high)
-    {
-    int pivot = arr[high]; 
-    int i = (low-1); 
-    for (int j=low; j<high; j++)
-    {
-    if (arr[j] <= pivot)
-    {
-    i++;
-
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    }
-    }
-
-    int temp = arr[i+1];
-    arr[i+1] = arr[high];
-    arr[high] = temp;
-
-    return i+1;
-    }
+     * preconditon: 
+     *  lowestIndex < highestIndex. 
+     *  Array is unsorted and of n-length.
+     * postcondition:
+     *  Array sorted in ASCENDING order.
      */
-    private static Scanner input = new Scanner(System.in);
+    private static void mergeSortFromTo(int lowestIndex, int highestIndex, int[] array) throws InterruptedException
+    {
+                boolean showRecursiveCalls = Setting.isEnabled(Algorithm.MERGE_SORT, Setting.SHOW_RECURSIVE_CALLS);
+                boolean showDivide = Setting.isEnabled(Algorithm.MERGE_SORT, Setting.SHOW_DIVIDE);
+                boolean isInitialCall = (lowestIndex == 0 && highestIndex == array.length - 1);
+                boolean isBaseCase = (lowestIndex == highestIndex);
+                
+                if(!isInitialCall)
+                {
+                    System.out.println("\nWhole array: " + Arrays.toString(array) );
+                    TimeUnit.MILLISECONDS.sleep(1998);
+                }
+                
+                if(showRecursiveCalls)
+                {
+                    if(isBaseCase)
+                    {
+                        System.out.println
+                        (
+                            "\n Base case: " +
+                            "\n   return array " + arrayInRangeNoElipsis(lowestIndex, highestIndex, array)
+                        );
+                        TimeUnit.MILLISECONDS.sleep(1998);
+                        
+                        System.out.println("   (DIVIDING not necessary with one element. It is automaticaly considered SORTED.)");
+                        TimeUnit.MILLISECONDS.sleep(1998);
+                    }
+                    else if(!isInitialCall)
+                    {
+                        System.out.println
+                        (   
+                            "\n Recursive call: " + 
+                            "mergeSortFromTo(" + lowestIndex + ", " + highestIndex + ")" 
+                        );
+                        TimeUnit.MILLISECONDS.sleep(2200);
+                    }
+                }
+                if(showDivide && !isBaseCase)
+                {
+                    System.out.println(" DIVIDE Array: " + arrayInRangeNoElipsis(lowestIndex, highestIndex, array));
+                    TimeUnit.MILLISECONDS.sleep(2200);
+                }
+        
+        if(lowestIndex < highestIndex)
+        {
+            int middleIndex = (lowestIndex + highestIndex)/2;
+            
+            mergeSortFromTo(lowestIndex, middleIndex, array);
+            
+                if(showRecursiveCalls)
+                {
+                    System.out.print("\n Recursive call propogates up to the NEXT top call:");
+                    System.out.println(" mergeSortFromTo(" + lowestIndex + ", " + highestIndex + ")");
+                    TimeUnit.MILLISECONDS.sleep(2200);
+                }
+                if(showDivide)
+                {
+                    System.out.println
+                    (
+                        " DIVIDE UPPER half of: " +
+                         arrayInRangeNoElipsis(lowestIndex, highestIndex, array)
+                    );
+                    TimeUnit.MILLISECONDS.sleep(2200);
+                }
+                
+            mergeSortFromTo(middleIndex + 1, highestIndex, array);
+            
+                if(showDivide)
+                {
+                    System.out.println
+                    (   
+                    "\n DIVIDING: Done."
+                    );
+                    TimeUnit.MILLISECONDS.sleep(1998);
+                }
+                if( Setting.isEnabled(Algorithm.MERGE_SORT, Setting.SHOW_CONQUER_AND_COMBINE) )
+                {
+                    System.out.println
+                    (   
+                    "\n\n CONQUER: Sorted subarrays from " + 
+                    " mergeSortFromTo(" + lowestIndex + ", " + highestIndex + ")" +
+                    " to be merged together into one array."
+                    );
+                }
+                
+            mergeLowerAndUpperHalves(lowestIndex, middleIndex, highestIndex, array);
+        }
+                if(!isInitialCall)
+                {
+                    System.out.println("\nWhole array: " + Arrays.toString(array));
+                    TimeUnit.MILLISECONDS.sleep(2200);
+                }
+    }
+    
+    /*
+     * preconditon: 
+     *  Takes in an array that has two sorted subarrays, lowerHalf and upperHalf.
+     *  lowerHalf is from [lowestIndex...middleIndex] and 
+     *  upperHalf is from [middleIndex+1...highestIndex]
+     * postcondition: 
+     *  Merges the array, making it ASCENDING through CONQUERING and COMBINING
+     *
+     *Examples:
+     *Use case 1:
+     *  array[0...1] = [87, 17]
+     *  lowestIndex = 0;
+     *  highestIndex = 1;
+     *  middleIndex = (0 + 1)/2 = 0;
+     *  
+     * precondition:
+     *  lowerHalf sorted: array[0...0] = [87] 
+     *  upperHalf sorted: array[1...1] = [17]
+     *   (by definition, arrays with single elements are sorted)
+     *  
+     * postcondition: 
+     *  mergeLowerAndUpperHalves(...);
+     *  array[0...1] = [17, 87]
+     *  
+     *  
+     *Use case 2:
+     *  array[0...4] = [17, 87, 88, 6, 22]
+     *  lowestIndex = 0;
+     *  highestIndex = 4;
+     *  middleIndex = (0+4)/2 = 2;
+     * precondition:
+     *  lowerHalf sorted: array[0...2] = [17, 87, 88]
+     *  upperHalf sorted: array[3...4] = [6, 22] 
+     *  
+     * postcondition: 
+     *  mergeLowerAndUpperHalves(...);
+     *  array[0...4] = [6, 17, 22, 87, 88]
+     */
+    private static void mergeLowerAndUpperHalves(int lowestIndex, int middleIndex, int highestIndex, int[] array) throws InterruptedException
+    {  
+                boolean showConquerAndCombine = Setting.isEnabled(Algorithm.MERGE_SORT, Setting.SHOW_CONQUER_AND_COMBINE); 
+
+       int totalLowerHalfElements = middleIndex - lowestIndex + 1;
+       int lowerHalf[] = new int[totalLowerHalfElements];
+       int totalUpperHalfElements = highestIndex - (middleIndex +1) + 1;
+       int upperHalf[] = new int[totalUpperHalfElements];
+       
+       int originalArrayIndex = lowestIndex;
+       
+       for(int index = 0; index < lowerHalf.length; ++index, ++originalArrayIndex) 
+       {
+           lowerHalf[index] = array[originalArrayIndex];
+       }
+       
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println("\n  Temporary lowerHalf array: " + Arrays.toString(lowerHalf));
+                       TimeUnit.MILLISECONDS.sleep(1998);
+                    }
+       //originalArrayIndex makes sure upperHalf is filled with values from middleIndex + 1 to highestIndex 
+       //array[middleIndex + 1...highestIndex]
+       for(int index = 0; index < upperHalf.length; ++index, ++originalArrayIndex)
+       {
+           upperHalf[index] = array[originalArrayIndex];
+       }
+       
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println("\n  Temporary upperHalf array: " + Arrays.toString(upperHalf));
+                       TimeUnit.MILLISECONDS.sleep(1998);
+                   }
+               
+       originalArrayIndex = lowestIndex;
+       int lowerHalfIndex = 0;
+       int upperHalfIndex = 0;
+       
+       //puts appropriate lowerHalf or upperHalf elements in ASCENDING order into original
+       //array (hence the updating of originalArrayIndex)
+       while(lowerHalfIndex < lowerHalf.length && upperHalfIndex < upperHalf.length)
+       {
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       ("\n  Sorting subarrays in array: " 
+                       + arrayInRangeNoElipsis(lowestIndex, highestIndex, array)
+                       );
+                       TimeUnit.MILLISECONDS.sleep(1998);
+                   }
+           if(lowerHalf[lowerHalfIndex] <= upperHalf[upperHalfIndex])
+           {
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       (
+                        "\n    Inserting value (" + lowerHalf[lowerHalfIndex] + ")" +
+                        " from temporary lower half array"
+                       );
+                       TimeUnit.MILLISECONDS.sleep(1998);
+                   }
+                   
+               array[originalArrayIndex] = lowerHalf[lowerHalfIndex];  
+               
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       ("\n    WHY?: " +
+                       "\n        CURRENT lower half value (" + lowerHalf[lowerHalfIndex] + ")" +
+                       " <= CURRENT upper half value (" + upperHalf[upperHalfIndex] + ")"
+                       );
+                       TimeUnit.MILLISECONDS.sleep(2200);
+                   }
+                   
+               ++lowerHalfIndex;
+           }
+           else 
+           {
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       (
+                        "\n    Inserting value (" + upperHalf[upperHalfIndex] + ")" +
+                        " from temporary upper half array"
+                       );
+                       TimeUnit.MILLISECONDS.sleep(1998);
+                   }
+                   
+               array[originalArrayIndex] = upperHalf[upperHalfIndex];
+               
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       ("\n    WHY?: " +
+                       "\n        CURRENT upper half value (" + upperHalf[upperHalfIndex] + ")" +
+                       " <= CURRENT lower half value (" + lowerHalf[lowerHalfIndex] + ")"
+                       );
+                       TimeUnit.MILLISECONDS.sleep(2200);
+                    }
+                    
+               ++upperHalfIndex;
+           }
+           ++originalArrayIndex;
+       }
+       
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println("\n    Array fills up with remaining values.");
+                       TimeUnit.MILLISECONDS.sleep(2200);
+                   }   
+       while(lowerHalfIndex < lowerHalf.length)
+       {
+           array[originalArrayIndex] = lowerHalf[lowerHalfIndex];
+           ++lowerHalfIndex;
+           ++originalArrayIndex;
+       }
+       while(upperHalfIndex < upperHalf.length)
+       {
+           array[originalArrayIndex] = upperHalf[upperHalfIndex];
+           ++upperHalfIndex;
+           ++originalArrayIndex;
+       }
+       
+                   if(showConquerAndCombine)
+                   {
+                       System.out.println
+                       (
+                       "\n COMBINE results:" +
+                       "\n   return array " + arrayInRangeNoElipsis(lowestIndex, highestIndex, array) 
+                       );
+                       TimeUnit.MILLISECONDS.sleep(2500);
+                   }
+    }
+    private static String arrayInRangeNoElipsis(int min, int max, int[] array)
+    {
+        if(min > max)
+        {
+            int temp = max;
+            max = min;
+            min = temp;
+        }
+        else if (min < 0 || max > array.length)
+        {
+            return "";
+        }
+
+        String stringArray; 
+
+        stringArray = "[";
+
+        for(int index = min; index <= max; ++index)
+        {
+            stringArray += array[index];
+            if(index != max)
+            {
+                stringArray += ", ";
+            }
+        }
+
+        stringArray += "]";
+
+        return stringArray;
+    }
+    
+    public static int[] doQuickSort(int[] array) throws InterruptedException
+    {
+       int lowestIndex = 0;
+       int highestIndex = array.length -1;
+       System.out.println
+       ("\n\nFunction signature -- " +
+       "void quickSortFromTo(int lowestIndex, int highestIndex...)"
+       );
+       TimeUnit.MILLISECONDS.sleep(1998);
+       System.out.println
+       (
+           "\n\nInitial call: " + 
+            "quickSortFromTo(" + lowestIndex + ", " + highestIndex + ")" + 
+            "\nArray: " + Arrays.toString(array)
+       );
+       TimeUnit.MILLISECONDS.sleep(1998);
+                
+       if(lowestIndex != highestIndex)
+       {
+           System.out.println
+           (
+           "\nORDER of calls " +
+           "\n  (Recursive calls to follow)" +
+           "\nExpect quickSortFromTo() to: " +
+           "\n 1. DIVIDE (partitioning subarrays)" +
+           "\n 2. CONQUER (partitioning and sorting values)"
+           );
+           TimeUnit.MILLISECONDS.sleep(2500);
+       }
+       
+       quickSortFromTo(lowestIndex, highestIndex, array);
+       return array; 
+    }
+    /*
+     * preconditon: 
+     *  lowestIndex < highestIndex. 
+     *  Array is unsorted and of n-length.
+     * postcondition:
+     *  Array sorted in ASCENDING order.
+     */
+    private static void quickSortFromTo(int lowestIndex, int highestIndex, int[] array)
+    {   
+        if(lowestIndex < highestIndex)
+        {
+            int partitionIndex = getIndexFromPartition(lowestIndex, highestIndex, array);
+            quickSortFromTo(lowestIndex, partitionIndex - 1, array);
+            quickSortFromTo(partitionIndex + 1, highestIndex, array);
+        }
+    }
+    private static int getIndexFromPartition(int lowestIndex, int highestIndex, int[] array)
+    {
+        int partitionIndex = lowestIndex;
+        int partitionValue = array[highestIndex];
+        
+        for(int index = lowestIndex; index < highestIndex; ++index)
+        {
+            if(array[index] <= partitionValue)
+            {
+                swap(index, partitionIndex, array);
+                ++partitionIndex;
+            }
+        }
+        
+        swap(highestIndex, partitionIndex, array);
+        return partitionIndex;
+    }
+  
+     /*
+     * precondition:
+     *     index1 and index2 are indices of array
+     * postcondition:
+     *     element at index1 will be at index2 and 
+     *     element at index2 will be at index1
+     */
+    private static void swap(int index1, int index2, int[] array)
+    {
+        int temp = array[index2];
+        array[index2] = array[index1];
+        array[index1] = temp;
+    }
 }

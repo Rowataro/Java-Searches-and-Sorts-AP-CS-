@@ -40,6 +40,12 @@ public class Setting
             case INSERTION_SORT:
                 insertionSortOptions = new boolean[TOTAL_INSERTION_SORT_OPTIONS];
                 return insertionSortOptions;
+            case MERGE_SORT:
+                mergeSortOptions = new boolean[TOTAL_MERGE_SORT_OPTIONS];
+                return mergeSortOptions;
+            case QUICK_SORT:
+                quickSortOptions = new boolean[TOTAL_QUICK_SORT_OPTIONS];
+                return quickSortOptions;
             case BINARY_SEARCH:
                 binarySearchOptions = new boolean[TOTAL_BINARY_SEARCH_OPTIONS];
                 return binarySearchOptions;
@@ -71,6 +77,19 @@ public class Setting
                     "\n 2. Show step 2 of insertion sort?" +
                     "\n    (shows when and how a COMPUTER inserts the value from step 1.)"
                 );
+            break;
+            case MERGE_SORT:
+                System.out.println
+                (
+                    "\n 1. Show step 1 of merge sort?" + 
+                    "\n    (recursive calls and the order which they call)" +
+                    "\n 2. Show step 2 of merge sort?" +
+                    "\n    (dividing upper and lower halves)" +
+                    "\n 3. Show step 3 of merge sort?" +
+                    "\n    (conquering (sorting subarrays in array) and combining)"
+                );
+            break;
+            case QUICK_SORT:
             break;
             case BINARY_SEARCH:
                 System.out.println
@@ -135,6 +154,12 @@ public class Setting
             case INSERTION_SORT:
                 assert insertionSortOptions != null : "Set help settings.";
                 return insertionSortOptions[index];
+            case MERGE_SORT:
+                assert mergeSortOptions != null : "Set help settings";
+                return mergeSortOptions[index];
+            case QUICK_SORT:
+                assert quickSortOptions != null : "Set help settings";
+                return quickSortOptions[index];
             case BINARY_SEARCH:
                 assert binarySearchOptions != null : "Set help settings.";
                 return binarySearchOptions[index];
@@ -160,9 +185,19 @@ public class Setting
     public static final int TOTAL_INSERTION_SORT_OPTIONS = 2;
     private static boolean[] insertionSortOptions = null;
     
+    public static final int SHOW_RECURSIVE_CALLS = 0;
+    public static final int SHOW_DIVIDE = 1;
+    public static final int SHOW_CONQUER_AND_COMBINE = 2;
+    public static final int TOTAL_MERGE_SORT_OPTIONS = 3;
+    private static boolean[] mergeSortOptions = null; 
+    
+    public static final int TOTAL_QUICK_SORT_OPTIONS = 0;
+    private static boolean[] quickSortOptions = null;
+    
     
     
     public static final int KEY_NOT_FOUND = 2;
+    
     
     public static final int SEARCH_RANGE_VALUES = 0;
     public static final int NARROWING_THE_SEARCH = 1;
@@ -176,7 +211,7 @@ public class Setting
     
     public static final int TOTAL_LINEAR_SEARCH_OPTIONS = 3;
     private static boolean[] linearSearchOptions = null;
-    
+   
     
     private static Scanner input = new Scanner(System.in);
 }

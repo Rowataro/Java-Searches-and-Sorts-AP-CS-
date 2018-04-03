@@ -4,18 +4,35 @@ comment0.text=\r\n\ Please\ note\ that\ text\ formatting\ is\ not\ standard.\ \r
 comment1.params=array
 comment1.target=int[]\ doSelectionSort(int[])
 comment1.text=\r\n\ precondition\:\ \r\n\ \ Array\ is\ unsorted\ and\ is\ of\ n-length\r\n\ postcondition\:\ \r\n\ \ Array\ sorted\ in\ ASCENDING\ order\r\n
+comment10.params=array
+comment10.target=int[]\ doQuickSort(int[])
+comment11.params=lowestIndex\ highestIndex\ array
+comment11.target=void\ quickSortFromTo(int,\ int,\ int[])
+comment11.text=\r\n\ preconditon\:\ \r\n\ \ lowestIndex\ <\ highestIndex.\ \r\n\ \ Array\ is\ unsorted\ and\ of\ n-length.\r\n\ postcondition\:\r\n\ \ Array\ sorted\ in\ ASCENDING\ order.\r\n
+comment12.params=lowestIndex\ highestIndex\ array
+comment12.target=int\ getIndexFromPartition(int,\ int,\ int[])
+comment13.params=index1\ index2\ array
+comment13.target=void\ swap(int,\ int,\ int[])
+comment13.text=\r\n\ precondition\:\r\n\ \ \ \ \ index1\ and\ index2\ are\ indices\ of\ array\r\n\ postcondition\:\r\n\ \ \ \ \ element\ at\ index1\ will\ be\ at\ index2\ and\ \r\n\ \ \ \ \ element\ at\ index2\ will\ be\ at\ index1\r\n
 comment2.params=startIndex\ array
 comment2.target=int\ getMinIndexStartingFrom(int,\ int[])
 comment2.text=\r\n\ Use\ Case\:\r\n\ \ precondition\:\r\n\ \ \ \ \ \ int[]\ array\ \=\ {18,\ 6,\ 66,\ 44,\ 9,\ 22,\ 14};\r\n\ \ \ \ \ \ getMinIndexStartingFrom(2,\ array);\r\n\ \ postcondition\:\ \r\n\ \ \ \ \ \ returns\ 4.\ \r\n\ \ \ \ \ \ The\ minimum\ is\ 9\ starting\ from\ {...66,\ 44,\ 9,\ 22,\ 14}.\ 9\ has\ \r\n\ \ \ \ \ \ index\ 4\ in\ the\ original\ array.\ \r\n
-comment3.params=index1\ index2\ array
-comment3.target=void\ swap(int,\ int,\ int[])
-comment3.text=\r\n\ precondition\:\r\n\ \ \ \ \ index1\ and\ index2\ are\ indices\ of\ array\r\n\ postcondition\:\r\n\ \ \ \ \ element\ at\ index1\ will\ be\ at\ index2\ and\ \r\n\ \ \ \ \ element\ at\ index2\ will\ be\ at\ index1\r\n
-comment4.params=array
-comment4.target=int[]\ doInsertionSort(int[])
-comment4.text=\r\n\ precondition\:\ \r\n\ \ Array\ is\ unsorted\ and\ is\ of\ n-length\r\n\ postcondition\:\ \r\n\ \ Array\ sorted\ in\ ASCENDING\ order\r\n
-comment5.params=unsortedValue\ endIndex\ array
-comment5.target=void\ insertValueEndingAt(int,\ int,\ int[])
-comment5.text=\ precondition\:\r\n\ \ \ \ \ \ array\ from\ 0\ to\ endIndex\ is\ sorted\ in\ ASCENDING\ order\r\n\ Use\ Case\:\r\n\ \ precondition\:\r\n\ \ \ \ \ \ array\ \=\ {3,\ 6,\ 7,\ 4,\ 8,\ 5};\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ unsortedValue\ \=\ 4\ \r\n\ \ \ \ \ \ sortedIndex/endIndex\ \=\ 2\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ insertValueEndingAt(4,\ 2,\ array);\r\n\ \ postcondition\:\ \r\n\ \ \ \ \ \ array\ \=\ {3,\ 4,\ 6,\ 7,\ 8,\ 5};\r\n
-comment6.params=min\ max\ array
-comment6.target=java.lang.String\ printInRange(int,\ int,\ int[])
-numComments=7
+comment3.params=array
+comment3.target=int[]\ doInsertionSort(int[])
+comment3.text=\r\n\ precondition\:\ \r\n\ \ Array\ is\ unsorted\ and\ is\ of\ n-length\r\n\ postcondition\:\ \r\n\ \ Array\ sorted\ in\ ASCENDING\ order\r\n
+comment4.params=unsortedValue\ endIndex\ array
+comment4.target=void\ insertValueEndingAt(int,\ int,\ int[])
+comment4.text=\ precondition\:\r\n\ \ \ \ \ \ array\ from\ 0\ to\ endIndex\ is\ sorted\ in\ ASCENDING\ order\r\n\ Use\ Case\:\r\n\ \ precondition\:\r\n\ \ \ \ \ \ array\ \=\ {3,\ 6,\ 7,\ 4,\ 8,\ 5};\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ unsortedValue\ \=\ 4\ \r\n\ \ \ \ \ \ sortedIndex/endIndex\ \=\ 2\r\n\ \ \ \ \ \ \r\n\ \ \ \ \ \ insertValueEndingAt(4,\ 2,\ array);\r\n\ \ postcondition\:\ \r\n\ \ \ \ \ \ array\ \=\ {3,\ 4,\ 6,\ 7,\ 8,\ 5};\r\n
+comment5.params=min\ max\ array
+comment5.target=java.lang.String\ arrayInRange(int,\ int,\ int[])
+comment6.params=array
+comment6.target=int[]\ doMergeSort(int[])
+comment7.params=lowestIndex\ highestIndex\ array
+comment7.target=void\ mergeSortFromTo(int,\ int,\ int[])
+comment7.text=\r\n\ preconditon\:\ \r\n\ \ lowestIndex\ <\ highestIndex.\ \r\n\ \ Array\ is\ unsorted\ and\ of\ n-length.\r\n\ postcondition\:\r\n\ \ Array\ sorted\ in\ ASCENDING\ order.\r\n
+comment8.params=lowestIndex\ middleIndex\ highestIndex\ array
+comment8.target=void\ mergeLowerAndUpperHalves(int,\ int,\ int,\ int[])
+comment8.text=\r\n\ preconditon\:\ \r\n\ \ Takes\ in\ an\ array\ that\ has\ two\ sorted\ subarrays,\ lowerHalf\ and\ upperHalf.\r\n\ \ lowerHalf\ is\ from\ [lowestIndex...middleIndex]\ and\ \r\n\ \ upperHalf\ is\ from\ [middleIndex+1...highestIndex]\r\n\ postcondition\:\ \r\n\ \ Merges\ the\ array,\ making\ it\ ASCENDING\ through\ CONQUERING\ and\ COMBINING\r\n\r\nExamples\:\r\nUse\ case\ 1\:\r\n\ \ array[0...1]\ \=\ [87,\ 17]\r\n\ \ lowestIndex\ \=\ 0;\r\n\ \ highestIndex\ \=\ 1;\r\n\ \ middleIndex\ \=\ (0\ +\ 1)/2\ \=\ 0;\r\n\ \ \r\n\ precondition\:\r\n\ \ lowerHalf\ sorted\:\ array[0...0]\ \=\ [87]\ \r\n\ \ upperHalf\ sorted\:\ array[1...1]\ \=\ [17]\r\n\ \ \ (by\ definition,\ arrays\ with\ single\ elements\ are\ sorted)\r\n\ \ \r\n\ postcondition\:\ \r\n\ \ mergeLowerAndUpperHalves(...);\r\n\ \ array[0...1]\ \=\ [17,\ 87]\r\n\ \ \r\n\ \ \r\nUse\ case\ 2\:\r\n\ \ array[0...4]\ \=\ [17,\ 87,\ 88,\ 6,\ 22]\r\n\ \ lowestIndex\ \=\ 0;\r\n\ \ highestIndex\ \=\ 4;\r\n\ \ middleIndex\ \=\ (0+4)/2\ \=\ 2;\r\n\ precondition\:\r\n\ \ lowerHalf\ sorted\:\ array[0...2]\ \=\ [17,\ 87,\ 88]\r\n\ \ upperHalf\ sorted\:\ array[3...4]\ \=\ [6,\ 22]\ \r\n\ \ \r\n\ postcondition\:\ \r\n\ \ mergeLowerAndUpperHalves(...);\r\n\ \ array[0...4]\ \=\ [6,\ 17,\ 22,\ 87,\ 88]\r\n
+comment9.params=min\ max\ array
+comment9.target=java.lang.String\ arrayInRangeNoElipsis(int,\ int,\ int[])
+numComments=14

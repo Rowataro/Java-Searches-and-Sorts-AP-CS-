@@ -138,7 +138,9 @@ public class ShowAlgorithm
     {
          assert 
          (algorithm == Algorithm.SELECTION_SORT
-         || algorithm == Algorithm.INSERTION_SORT) : "Not run with a sort algorithm";
+         || algorithm == Algorithm.INSERTION_SORT 
+         || algorithm == Algorithm.MERGE_SORT 
+         || algorithm == Algorithm.QUICK_SORT) : "Not run with a sort algorithm";
         
          Setting.setAll(algorithm);
          
@@ -146,7 +148,7 @@ public class ShowAlgorithm
                + "--Array: " + Arrays.toString(unsortedSortArray));
          unsortedSortArray = executeSort(algorithm);
          
-         //assert Arrays.equals(unsortedSortArray, expectedSortArray) : "Sort did not work.";
+         assert Arrays.equals(unsortedSortArray, expectedSortArray) : "Sort did not work.";
             
          System.out.println("\nSuccessful " + algorithm.getName() + "!");
     }
@@ -158,13 +160,17 @@ public class ShowAlgorithm
                 return Sort.doSelectionSort(unsortedSortArray);
             case INSERTION_SORT:
                 return Sort.doInsertionSort(unsortedSortArray);
+            case MERGE_SORT:
+                return Sort.doMergeSort(unsortedSortArray);
+            case QUICK_SORT:
+                return Sort.doQuickSort(unsortedSortArray);
             default:
                 return null;
         }
     }
     
-    private static int[] unsortedSortArray = {63, 2, 7, 64, 87, 5, 3, 1, 2, 5, 67, 635, 35};
-    //private static int[] expectedSortArray = {0, 1, 7, 9, 11, 22, 42, 88};
+    private static int[] unsortedSortArray  = {22, 11, 88, 0, 9, 7, 42,1};
+    private static int[] expectedSortArray = {0, 1, 7, 9, 11, 22, 42, 88};
     
     private static int[] searchArray = null;   
     private static int total = 10;

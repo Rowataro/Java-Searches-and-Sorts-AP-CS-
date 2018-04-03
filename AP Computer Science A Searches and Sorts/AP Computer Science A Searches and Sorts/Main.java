@@ -31,58 +31,12 @@ public class Main
    {
      ShowAlgorithm.runSort(Algorithm.INSERTION_SORT);
    }
-   /*
-   public static void testQuick()
+   public static void testMerge() throws InterruptedException
    {
-       int[] array1 = {22, 11, 99, 88, 9, 7, 42};
-       array1 = Sort.doQuickSort(array1);
-       int[] expectedArray1 = {7, 9, 11, 22, 42, 88, 99};
-       
-       assert Arrays.equals(array1, expectedArray1) : "\nSelection sort didn't work.";
-       
-       int[] array2 = {22, 11, 99, 88, 9, 7, 42,1};
-       array2 = Sort.doQuickSort(array2);
-       int[] expectedArray2 = {1, 7, 9, 11, 22, 42, 88, 99};
-       
-       assert Arrays.equals(array2, expectedArray2) : "\nSelection sort didn't work.";
-       
-       int[] array3 = {22, 11, 0, 88, 9, 7, 42,1};
-       array3 = Sort.doQuickSort(array3);
-       int[] expectedArray3 = {0, 1, 7, 9, 11, 22, 42, 88};
-       
-       assert Arrays.equals(array3, expectedArray3) : "\nSelection sort didn't work.";
-       
-       System.out.println("\nSuccess!");
+       ShowAlgorithm.runSort(Algorithm.MERGE_SORT);
    }
-   */
-   /*
-   public static void testMerge()
+   public static void testQuick() throws InterruptedException
    {
-       int[] array1 = {22, 11, 99, 88, 9, 7, 42};
-       array1 = Sort.doMergeSort(array1);
-       int[] expectedArray1 = {7, 9, 11, 22, 42, 88, 99};
-       
-       assert Arrays.equals(array1, expectedArray1) : "\nSelection sort didn't work.";
-       
-       int[] array2 = {22, 11, 99, 88, 9, 7, 42,1};
-       array2 = Sort.doMergeSort(array2);
-       int[] expectedArray2 = {1, 7, 9, 11, 22, 42, 88, 99};
-       
-       assert Arrays.equals(array2, expectedArray2) : "\nSelection sort didn't work.";
-       
-       int[] array3 = {22, 11, 0, 88, 9, 7, 42,1};
-       array3 = Sort.doMergeSort(array3);
-       int[] expectedArray3 = {0, 1, 7, 9, 11, 22, 42, 88};
-       
-       assert Arrays.equals(array3, expectedArray3) : "\nSelection sort didn't work.";
-       
-       System.out.println("\nSuccess!");
+       ShowAlgorithm.runSort(Algorithm.QUICK_SORT);
    }
-   */
-  
-  private static boolean showAllAtOnce = false;
-  private static boolean moveOnToNextSearch = false;
-  
-  private static int TOTAL_ELEMENTS = 10;
-  private static int power = 2;
 }
