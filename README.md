@@ -14,6 +14,7 @@
 * Sorts
   * Selection
   * Insertion
+  * Merge
   
 ### Helpful Khan Academy course, from which I derived inspiration
 [Link](https://www.khanacademy.org/computing/computer-science/algorithms)
