@@ -1,5 +1,5 @@
 
-# Intent: 
+# About: 
 *  Helpful guide for tested searches and sorts in the **AP Computer Science A** exam. 
 *  Contains code for each algorithm. Visualizes each step. 
 *  Note: **BlueJ** required to run. [Installation link](https://www.bluej.org/)
