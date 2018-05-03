@@ -80,8 +80,8 @@ public class Sort
      *      getMinIndexStartingFrom(2, array);
      *  postcondition: 
      *      returns 4. 
-     *      The minimum is 9 starting from {...66, 44, 9, 22, 14}. 9 has 
-     *      index 4 in the original array. 
+     *      The minimum is 9 starting from {...66, 44, 9, 22, 14}. 
+     *      9 has index 4 in the original array. 
      */
     private static int getMinIndexStartingFrom(int startIndex, int[] array) throws InterruptedException
     {
@@ -141,7 +141,7 @@ public class Sort
                     TimeUnit.MILLISECONDS.sleep(3000);
                 }
 
-            insertValueEndingAt(array[unsortedIndex], sortedIndex, array);
+            insertValueInSubarrayThatEndsAt(array[unsortedIndex], sortedIndex, array);
 
                 System.out.println("\nAfter: " + Arrays.toString(array));
                 TimeUnit.MILLISECONDS.sleep(2500);
@@ -161,7 +161,7 @@ public class Sort
      *  postcondition: 
      *      array = {3, 4, 6, 7, 8, 5};
      */ 
-    private static void insertValueEndingAt(int unsortedValue, int endIndex, int[] array) throws InterruptedException
+    private static void insertValueInSubarrayThatEndsAt(int unsortedValue, int endIndex, int[] array) throws InterruptedException
     { 
         int index;
 

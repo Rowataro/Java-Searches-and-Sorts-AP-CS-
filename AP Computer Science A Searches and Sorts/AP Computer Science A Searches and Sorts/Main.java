@@ -29,7 +29,7 @@ public class Main
    }
    public static void testInsertion() throws InterruptedException
    {
-     ShowAlgorithm.runSort(Algorithm.INSERTION_SORT);
+       ShowAlgorithm.runSort(Algorithm.INSERTION_SORT);
    }
    public static void testMerge() throws InterruptedException
    {
